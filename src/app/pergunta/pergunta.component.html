@@ -1,0 +1,25 @@
+<table class="tabela">
+  <thead class="tabela__cabecalho">
+    <th class= "tabela__cabecalho__conteudo">Data</th>
+    <th class= "tabela__cabecalho__conteudo">Titulo</th>
+    <th class= "tabela__cabecalho__conteudo">MarcaCarro</th>
+    <th class= "tabela__cabecalho__conteudo">ModeloCarro</th>
+    <th class= "tabela__cabecalho__conteudo">Mensagem</th>
+    <th class= "tabela__cabecalho__conteudo">Email</th>
+  </thead>
+  <tbody *ngIf="cadastros.length > 0; else listaVazia">
+    <tr class= "tabela__linha"*ngFor="let cadastro of cadastros">
+      <td class= "tabela__conteudo">{{cadastro.data | date:"short"}}</td>
+      <td class= "tabela__conteudo">{{cadastro.titulo}}</td>
+      <td class= "tabela__conteudo">{{cadastro.marcaCarro}}</td>
+      <td class= "tabela__conteudo">{{cadastro.modeloCarro}}</td>
+      <td class= "tabela__conteudo">{{cadastro.mensagem}}</td>
+      <td class= "tabela__conteudo">{{cadastro.email}}</td>
+    </tr>
+  </tbody>
+</table>
+<ng-template #listaVazia>
+  <p>Nenhuma pergunta cadastrada</p>
+</ng-template>
+
+

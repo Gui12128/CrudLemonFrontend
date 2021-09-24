@@ -7,4 +7,11 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'CrudLemonFront';
+  cadastros: any[] = [];
+
+  cadastrar($event: any){
+    console.log($event);
+    const cadastro = {...$event, data: new Date()};
+    this.cadastros.push(cadastro);
+  }
 }
